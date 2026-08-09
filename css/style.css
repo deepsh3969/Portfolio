@@ -1,0 +1,392 @@
+/* ==========================================================================
+   TRUE BLACK DESIGN SYSTEM
+   ========================================================================== */
+:root {
+    /* Accent Colors */
+    --accent-green: #00a854;           /* Emerald CTA */
+    --accent-green-hover: #008f47;
+    --accent-orange: #ff7a00;          /* Orange Accent */
+    
+    /* Pitch Black & Deep Surface Backgrounds */
+    --bg-page: #000000;                /* Pure Black Base Background */
+    --bg-header: #000000;              /* Pure Black Header */
+    --bg-surface: #0a0a0a;             /* Main Section Cards */
+    --bg-card: #121212;                /* Elevated Component Fill */
+    --bg-card-hover: #000000;          /* Hover State */
+    --bg-input: #050505;               /* Form Inputs */
+    --bg-glass: rgba(255, 255, 255, 0.05);
+
+    /* Text Colors (Maximum Contrast) */
+    --text-primary: #ffffff;           /* Stark White Headers */
+    --text-secondary: #e2e8f0;         /* High-Contrast Light Body Text */
+    --text-muted: #a0aec0;             /* Muted Labels & Links */
+
+    /* Structural Borders & Shadows */
+    --border-color: #222222;
+    --border-glass: rgba(255, 255, 255, 0.1);
+
+    /* Geometry & Timing */
+    --radius-sm: 6px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-full: 9999px;
+
+    --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.8);
+}
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+body {
+    background-color: var(--bg-page);
+    color: var(--text-secondary);
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg-page);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--bg-card);
+    border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-green);
+}
+
+/* ==========================================================================
+   DARK HEADER & NAVIGATION BAR
+   ========================================================================== */
+header {
+    background-color: var(--bg-header);
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+header h1 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    color: var(--text-primary) !important; /* Forces bold white visibility */
+    margin-bottom: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+nav {
+    background-color: rgba(15, 23, 42, 0.9);
+    padding: 0.85rem 1rem;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+    transition: var(--transition);
+    display: inline-block;
+}
+
+nav a:hover {
+    color: var(--text-primary);
+    background-color: var(--bg-glass);
+}
+
+nav a.active {
+    color: #ffffff;
+    background-color: var(--accent-green);
+    box-shadow: var(--shadow-glow);
+}
+
+/* ==========================================================================
+   MAIN CONTENT & CARD CONTAINERS
+   ========================================================================== */
+main {
+    max-width: 980px;
+    width: 92%;
+    margin: 36px auto;
+    background-color: var(--bg-surface);
+    padding: 40px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    flex-grow: 1;
+}
+
+h1, h2, h3, h4 {
+    color: var(--text-primary);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+p {
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    color: var(--text-secondary);
+}
+
+.text-orange {
+    color: var(--accent-orange);
+    font-weight: 700;
+}
+
+/* ==========================================================================
+   HERO PROFILE SECTION
+   ========================================================================== */
+.hero-section {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    padding: 12px 0;
+    margin-bottom: 24px;
+}
+
+.profile-img {
+    width: 170px;
+    height: 170px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    border: 3px solid var(--accent-green);
+    box-shadow: var(--shadow-glow);
+    flex-shrink: 0;
+    transition: var(--transition);
+}
+
+.profile-img:hover {
+    transform: scale(1.02);
+}
+
+.hero-text {
+    flex-grow: 1;
+}
+
+.hero-text h2 {
+    font-size: 2.2rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.subtitle {
+    font-size: 1.15rem;
+    color: var(--accent-orange);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+
+.highlight-badge {
+    background: var(--bg-card);
+    border-left: 4px solid var(--accent-green);
+    padding: 14px 18px;
+    margin-top: 16px;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    font-size: 0.95rem;
+    color: var(--text-primary);
+    border-top: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   DATA TABLES
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 24px 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+}
+
+th, td {
+    padding: 16px 20px;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+th {
+    background-color: #1a2332;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    border-bottom: 2px solid var(--border-color);
+}
+
+td {
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+tr:hover {
+    background-color: var(--bg-card-hover);
+    color: var(--text-primary);
+}
+
+/* ==========================================================================
+   FORM CONTROLS & BUTTONS
+   ========================================================================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    font-size: 0.98rem;
+    color: var(--text-primary);
+    background-color: var(--bg-input);
+    transition: var(--transition);
+}
+
+input::placeholder, textarea::placeholder {
+    color: var(--text-muted);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-green);
+    box-shadow: 0 0 0 3px var(--shadow-glow);
+}
+
+button {
+    background-color: var(--accent-green);
+    color: #ffffff;
+    padding: 14px 28px;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    transition: var(--transition);
+    box-shadow: var(--shadow-glow);
+}
+
+button:hover {
+    background-color: var(--accent-green-hover);
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   PROJECT CARDS
+   ========================================================================== */
+.project-card {
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-card);
+    padding: 28px;
+    margin-bottom: 28px;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+}
+
+.project-card:hover {
+    border-color: var(--accent-green);
+    transform: translateY(-2px);
+    background-color: var(--bg-card-hover);
+}
+
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    margin-top: 16px;
+    border: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 24px;
+    background-color: var(--bg-header);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+/* ==========================================================================
+   RESPONSIVE BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 24px 18px;
+        margin: 20px auto;
+    }
+
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .highlight-badge {
+        border-left: none;
+        border-top: 4px solid var(--accent-green);
+    }
+
+    nav a {
+        margin: 2px;
+        padding: 6px 12px;
+        font-size: 0.88rem;
+    }
+}

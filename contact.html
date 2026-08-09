@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
+        <a href="education.html">Education</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Get in Touch</h2>
+        <form action="#" method="post">
+            <div>
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="fullname" placeholder="Enter your full name" required>
+            </div>
+
+            <div>
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+            </div>
+
+            <div>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}">
+            </div>
+
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob">
+            </div>
+
+            <div>
+                <label for="subject">Subject:</label>
+                <select id="subject" name="subject">
+                    <option value="general">General Inquiry</option>
+                    <option value="collaboration">Project Collaboration</option>
+                    <option value="feedback">Feedback</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="message">Your Message:</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Student Portfolio. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

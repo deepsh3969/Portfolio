@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education - Deepesh Chaurasia</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        header h1 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+        .edu-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Overview Stat Strip */
+        .edu-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
+        }
+
+        .stat-icon {
+            width: 46px;
+            height: 46px;
+            border-radius: 8px;
+            background: #eff6ff;
+            color: #2563eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+            flex-shrink: 0;
+        }
+
+        .stat-details h4 {
+            margin: 0 0 2px 0;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-details p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+        }
+
+        /* Timeline Card Section */
+        .edu-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 12px;
+        }
+
+        /* Timeline Architecture */
+        .timeline {
+            position: relative;
+            padding-left: 28px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 6px;
+            bottom: 6px;
+            width: 2px;
+            background: #e2e8f0;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: -28px;
+            top: 4px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #ffffff;
+            border: 3px solid #2563eb;
+            box-shadow: 0 0 0 4px #eff6ff;
+        }
+
+        .timeline-content {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 18px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .degree-info h3 {
+            margin: 0 0 4px 0;
+            font-size: 1.05rem;
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .institution {
+            color: #475569;
+            font-size: 0.9rem;
+            margin: 0 0 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .badge-year {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: #e0e7ff;
+            color: #3730a3;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .score-box {
+            text-align: right;
+            align-self: center;
+        }
+
+        .score-label {
+            display: block;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            color: #64748b;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 2px;
+        }
+
+        .score-value {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.92rem;
+        }
+
+        .score-active {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .score-success {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        @media (max-width: 600px) {
+            .timeline-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .score-box {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Educational Qualifications</h1>
+    </header>
+
+    <nav>
+        <a href="newindex.html">Home</a>
+        <a href="newabout.html">About Me</a>
+        <a href="neweducation.html">Education</a>
+        <a href="newprojects.html">Projects</a>
+        <a href="newcontact.html">Contact</a>
+    </nav>
+
+    <main class="edu-container">
+        
+        <!-- Summary Stats Strip -->
+        <section class="edu-stats">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <div class="stat-details">
+                    <h4>Current Program</h4>
+                    <p>B.Tech Computer Eng.</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-award"></i></div>
+                <div class="stat-details">
+                    <h4>Higher Secondary</h4>
+                    <p>88.5% Aggregate</p>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon"><i class="fa-solid fa-school"></i></div>
+                <div class="stat-details">
+                    <h4>Secondary School</h4>
+                    <p>92.0% Aggregate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Academic Timeline Section -->
+        <section class="edu-card">
+            <h2 class="section-title">
+                <i class="fa-solid fa-timeline" style="color: #2563eb;"></i> Academic Roadmap
+            </h2>
+
+            <div class="timeline">
+                
+                <!-- B.Tech Entry -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="degree-info">
+                            <h3>B.Tech in Computer Engineering</h3>
+                            <p class="institution">
+                                <i class="fa-solid fa-building-columns" style="color: #64748b;"></i> State Technological University
+                            </p>
+                            <span class="badge-year">
+                                <i class="fa-regular fa-calendar"></i> 2025 &ndash; 2029
+                            </span>
+                        </div>
+                        <div class="score-box">
+                            <span class="score-label">Status</span>
+                            <span class="score-value score-active"><i class="fa-solid fa-spinner fa-spin"></i> In Progress</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 12 Entry -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="degree-info">
+                            <h3>Higher Secondary Certificate (12th)</h3>
+                            <p class="institution">
+                                <i class="fa-solid fa-school" style="color: #64748b;"></i> State Board
+                            </p>
+                            <span class="badge-year">
+                                <i class="fa-regular fa-calendar"></i> Year of Passing: 2025
+                            </span>
+                        </div>
+                        <div class="score-box">
+                            <span class="score-label">Score Achieved</span>
+                            <span class="score-value score-success">88.5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Class 10 Entry -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="degree-info">
+                            <h3>Secondary School Certificate (10th)</h3>
+                            <p class="institution">
+                                <i class="fa-solid fa-school" style="color: #64748b;"></i> State Board
+                            </p>
+                            <span class="badge-year">
+                                <i class="fa-regular fa-calendar"></i> Year of Passing: 2023
+                            </span>
+                        </div>
+                        <div class="score-box">
+                            <span class="score-label">Score Achieved</span>
+                            <span class="score-value score-success">92.0%</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Deepesh Chaurasia. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

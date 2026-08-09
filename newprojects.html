@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Deepesh Chaurasia</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <!-- Font Awesome for Professional Vector Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Header & Main Container */
+        header h1 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+        .projects-section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 12px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .projects-section h2 {
+            font-size: 1.4rem;
+            color: #0f172a;
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+
+        /* Category Filter Tabs */
+        .filter-container {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            color: #475569;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active, .filter-btn:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+        }
+
+        /* Project Cards Layout */
+        .projects-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .project-card-modern {
+            border: 1px solid #e2e8f0;
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+            transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card-modern:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            border-color: #bfdbfe;
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            color: #0f172a;
+            margin: 0;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Status Indicators */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .status-live {
+            background-color: #f0fdf4;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .status-pulse {
+            width: 7px;
+            height: 7px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            animation: pulse-animation 1.6s infinite;
+        }
+
+        @keyframes pulse-animation {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        .status-dev {
+            background-color: #fffbeb;
+            color: #b45309;
+            border: 1px solid #fde68a;
+        }
+
+        .project-desc {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.65;
+            margin-bottom: 18px;
+        }
+
+        /* Tech Badges */
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background-color: #f8fafc;
+            color: #334155;
+            border: 1px solid #e2e8f0;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        /* Project Action Buttons */
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 16px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #ffffff;
+            box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+            color: #ffffff;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background-color: #ffffff;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-secondary:hover {
+            background-color: #f8fafc;
+            color: #0f172a;
+            border-color: #94a3b8;
+        }
+
+        .btn-disabled {
+            background-color: #f1f5f9;
+            color: #94a3b8;
+            border: 1px solid #e2e8f0;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Projects</h1>
+    </header>
+
+    <nav>
+        <a href="newindex.html">Home</a>
+        <a href="newabout.html">About Me</a>
+        <a href="neweducation.html">Education</a>
+        <a href="newprojects.html">Projects</a>
+        <a href="newcontact.html">Contact</a>
+    </nav>
+
+    <main class="projects-section">
+        <div class="section-header-flex">
+            <h2>Featured Technical Work</h2>
+            <div class="filter-container">
+                <button class="filter-btn active">All</button>
+                <button class="filter-btn">AI & Web</button>
+                <button class="filter-btn">Civic Tech</button>
+                <button class="filter-btn">Systems</button>
+            </div>
+        </div>
+
+        <div class="projects-grid">
+            
+            <!-- Project 1: FreshTrack -->
+            <div class="project-card-modern">
+                <div class="project-header">
+                    <h3 class="project-title">
+                        <i class="fa-solid fa-leaf" style="color: #16a34a;"></i> 
+                        FreshTrack - AI Food Freshness Detection
+                    </h3>
+                    <span class="status-badge status-live">
+                        <span class="status-pulse"></span> Production
+                    </span>
+                </div>
+                
+                <p class="project-desc">
+                    An AI-powered web application utilizing Google AI Studio (Vision API) to evaluate raw and prepared food freshness in real-time. Features surface spoilage scoring, microbial health risk diagnostics, smart zero-waste culinary tips, and vendor batch ratings.
+                </p>
+
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fa-solid fa-brain"></i> Google AI Studio</span>
+                    <span class="tech-tag"><i class="fa-solid fa-eye"></i> Vision API</span>
+                    <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5 / CSS3</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://fresh-track-qp7pb5zlm-deepsh3969s-projects.vercel.app" target="_blank" class="btn-link btn-primary">
+                        <i class="fa-solid fa-rocket"></i> Launch Live App
+                    </a>
+                    <a href="FreshTrack_Documentation.pdf" target="_blank" class="btn-link btn-secondary">
+                        <i class="fa-solid fa-file-pdf"></i> View Documentation
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2: FixMyCity Application -->
+            <div class="project-card-modern">
+                <div class="project-header">
+                    <h3 class="project-title">
+                        <i class="fa-solid fa-city" style="color: #2563eb;"></i> 
+                        FixMyCity Application
+                    </h3>
+                    <span class="status-badge status-dev">
+                        <i class="fa-solid fa-hammer"></i> In Active Development
+                    </span>
+                </div>
+                
+                <p class="project-desc">
+                    A civic tech platform designed for citizens to report local civic issues—such as road potholes, municipal waste accumulation, and streetlight outages—directly to local authorities using geo-tagged location tracking and automated ticket status monitoring.
+                </p>
+
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fa-solid fa-globe"></i> Web Application</span>
+                    <span class="tech-tag"><i class="fa-solid fa-building"></i> Civic Tech</span>
+                    <span class="tech-tag"><i class="fa-solid fa-map-pin"></i> Geo-Location</span>
+                    <span class="tech-tag"><i class="fa-brands fa-react"></i> UI/UX Design</span>
+                </div>
+
+                <div class="project-links">
+                    <span class="btn-link btn-disabled">
+                        <i class="fa-solid fa-code-branch"></i> Alpha Version Coming Soon
+                    </span>
+                </div>
+            </div>
+
+            <!-- Project 3: Responsive Developer Portfolio -->
+            <div class="project-card-modern">
+                <div class="project-header">
+                    <h3 class="project-title">
+                        <i class="fa-solid fa-laptop-code" style="color: #0284c7;"></i> 
+                        Responsive Developer Portfolio
+                    </h3>
+                    <span class="status-badge status-live">
+                        <span class="status-pulse"></span> Production
+                    </span>
+                </div>
+                
+                <p class="project-desc">
+                    A responsive single-page portfolio website designed to present professional credentials, academic qualifications, and technical projects with a clean UI.
+                </p>
+
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fa-brands fa-html5"></i> HTML5</span>
+                    <span class="tech-tag"><i class="fa-brands fa-css3-alt"></i> CSS3</span>
+                    <span class="tech-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span class="tech-tag"><i class="fa-solid fa-icons"></i> Font Awesome</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="newindex.html" class="btn-link btn-primary">
+                        <i class="fa-solid fa-eye"></i> View Site
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 4: 8086 Assembly System Routines -->
+            <div class="project-card-modern">
+                <div class="project-header">
+                    <h3 class="project-title">
+                        <i class="fa-solid fa-microchip" style="color: #7c3aed;"></i> 
+                        8086 Assembly System Routines
+                    </h3>
+                    <span class="status-badge status-dev">
+                        <i class="fa-solid fa-code"></i> Repository Active
+                    </span>
+                </div>
+                
+                <p class="project-desc">
+                    Low-level assembly language routines developed in TASM and executed via DOSBox to explore low-level computer architecture and memory management.
+                </p>
+
+                <div class="tech-tags">
+                    <span class="tech-tag"><i class="fa-solid fa-terminal"></i> Assembly (8086)</span>
+                    <span class="tech-tag"><i class="fa-solid fa-gear"></i> TASM</span>
+                    <span class="tech-tag"><i class="fa-solid fa-desktop"></i> DOSBox</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="#" class="btn-link btn-secondary">
+                        <i class="fa-brands fa-github"></i> View Source Code
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Deepesh Chaurasia. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

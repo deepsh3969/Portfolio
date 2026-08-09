@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Deepesh Chaurasia</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        header h1 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+        .home-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        /* Hero Section */
+        .hero-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 28px;
+            display: flex;
+            align-items: center;
+            gap: 28px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .hero-img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #2563eb;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+            flex-shrink: 0;
+        }
+
+        .hero-content h2 {
+            font-size: 1.6rem;
+            color: #0f172a;
+            margin: 0 0 4px 0;
+        }
+
+        .hero-subtitle {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 0.95rem;
+            margin-bottom: 12px;
+        }
+
+        .hero-text {
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 18px;
+            border-radius: 6px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .btn-primary {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        .btn-primary:hover {
+            background-color: #1d4ed8;
+        }
+
+        .btn-outline {
+            background-color: #ffffff;
+            color: #334155;
+            border: 1px solid #cbd5e1;
+        }
+
+        .btn-outline:hover {
+            background-color: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        /* Stats Strip */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+        }
+
+        .stat-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 2px;
+        }
+
+        .stat-label {
+            font-size: 0.82rem;
+            color: #64748b;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Section Cards */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .dash-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .dash-card h3 {
+            font-size: 1.1rem;
+            color: #0f172a;
+            margin-top: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-list-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-pill {
+            background: #f1f5f9;
+            color: #334155;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .featured-project-desc {
+            font-size: 0.9rem;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 650px) {
+            .hero-card {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Deepesh Chaurasia</h1>
+    </header>
+
+    <nav>
+        <a href="newindex.html">Home</a>
+        <a href="newabout.html">About Me</a>
+        <a href="neweducation.html">Education</a>
+        <a href="newprojects.html">Projects</a>
+        <a href="newcontact.html">Contact</a>
+    </nav>
+
+    <main class="home-container">
+        
+        <!-- Main Hero Card -->
+        <section class="hero-card">
+            <img src="images/profile.jpg" alt="Deepesh Chaurasia" class="hero-img">
+            <div class="hero-content">
+                <h2>Welcome to My Portfolio</h2>
+                <div class="hero-subtitle">B.Tech Engineering Student & Software Developer</div>
+                <p class="hero-text">
+                    Passionate about software development, computer systems, and modern web tech. Currently focused on building scalable web applications, mastering algorithms, and exploring AI integrations.
+                </p>
+                <div class="hero-buttons">
+                    <a href="newprojects.html" class="btn-main btn-primary">
+                        <i class="fa-solid fa-code"></i> View Projects
+                    </a>
+                    <a href="newcontact.html" class="btn-main btn-outline">
+                        <i class="fa-envelope fa-regular"></i> Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">B.Tech</div>
+                <div class="stat-label">Engineering Degree</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2+</div>
+                <div class="stat-label">Active Projects</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5+</div>
+                <div class="stat-label">Core Tech Stack</div>
+            </div>
+        </section>
+
+        <!-- Dynamic Grid Content -->
+        <section class="dashboard-grid">
+            
+            <!-- Skill Focus Area -->
+            <div class="dash-card">
+                <h3><i class="fa-solid fa-layer-group" style="color: #2563eb;"></i> Core Competencies</h3>
+                <div class="skill-list-flex">
+                    <span class="skill-pill">C / C++</span>
+                    <span class="skill-pill">Python</span>
+                    <span class="skill-pill">JavaScript</span>
+                    <span class="skill-pill">HTML5 & CSS3</span>
+                    <span class="skill-pill">Data Structures</span>
+                    <span class="skill-pill">Google AI Studio</span>
+                </div>
+            </div>
+
+            <!-- Spotlight Highlight -->
+            <div class="dash-card">
+                <h3><i class="fa-solid fa-star" style="color: #eab308;"></i> Featured Highlight</h3>
+                <p class="featured-project-desc">
+                    Recently deployed <strong>FreshTrack</strong>, an AI-driven web tool leveraging Google AI Studio Vision API to analyze food freshness and spoilage risks in real-time.
+                </p>
+                <a href="newprojects.html" class="btn-main btn-outline" style="font-size: 0.82rem; padding: 6px 12px;">
+                    Explore FreshTrack <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Deepesh Chaurasia. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

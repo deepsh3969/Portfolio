@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Deepesh Chaurasia</title>
+    <link rel="stylesheet" href="css/style.css?v=3">
+    <!-- Font Awesome for Professional Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Header & Nav Alignment */
+        header h1 {
+            color: #ffffff;
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+        }
+
+        /* Contact Layout Container */
+        .contact-container {
+            max-width: 950px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+            overflow: hidden;
+        }
+
+        .contact-header {
+            padding: 28px 32px 0 32px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .contact-header h2 {
+            font-size: 1.5rem;
+            color: #0f172a;
+            margin: 0 0 8px 0;
+            font-weight: 700;
+        }
+
+        .contact-header p {
+            color: #64748b;
+            font-size: 0.95rem;
+            margin: 0 0 20px 0;
+        }
+
+        /* Two-Column Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            min-height: 480px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Left Column: Direct Info Sidebar */
+        .contact-sidebar {
+            background: #f8fafc;
+            border-right: 1px solid #e2e8f0;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .info-icon {
+            width: 42px;
+            height: 42px;
+            background-color: #eff6ff;
+            color: #2563eb;
+            border: 1px solid #bfdbfe;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .info-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #64748b;
+            letter-spacing: 0.6px;
+            margin-bottom: 4px;
+        }
+
+        .info-value {
+            font-size: 0.92rem;
+            color: #0f172a;
+            font-weight: 600;
+            text-decoration: none;
+            word-break: break-all;
+        }
+
+        .info-value a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .info-value a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+
+        /* Availability Status Badge */
+        .status-container {
+            margin-top: auto;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            color: #166534;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 600;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #22c55e;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+            animation: pulse-ring 1.6s infinite;
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Right Column: Contact Form */
+        .contact-form-wrapper {
+            padding: 32px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        @media (max-width: 580px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #334155;
+        }
+
+        .required-star {
+            color: #ef4444;
+        }
+
+        .input-with-icon {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 14px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            pointer-events: none;
+            transition: color 0.2s ease;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 14px 10px 40px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            color: #0f172a;
+            background-color: #ffffff;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        textarea.form-control {
+            padding-left: 14px;
+            resize: vertical;
+            min-height: 110px;
+            font-family: inherit;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .form-control:focus + i {
+            color: #2563eb;
+        }
+
+        select.form-control {
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 12px center;
+            background-size: 16px;
+            padding-right: 36px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: #2563eb;
+            color: #ffffff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn-submit:hover {
+            background-color: #1d4ed8;
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+            transform: translateY(-1px);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Contact Me</h1>
+    </header>
+
+    <nav>
+        <a href="newindex.html">Home</a>
+        <a href="newabout.html">About Me</a>
+        <a href="neweducation.html">Education</a>
+        <a href="newprojects.html">Projects</a>
+        <a href="newcontact.html">Contact</a>
+    </nav>
+
+    <main style="padding: 24px 16px;">
+        <div class="contact-container">
+            
+            <div class="contact-header">
+                <h2>Get in Touch</h2>
+                <p>Have a question, a project inquiry, or want to collaborate? Send a message below.</p>
+            </div>
+
+            <div class="contact-grid">
+                
+                <!-- Left Column: Direct Info Sidebar -->
+                <aside class="contact-sidebar">
+                    
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Email</span>
+                            <span class="info-value">
+                                <a href="mailto:deepesh.chaurasia@example.com">deepesh.chaurasia@example.com</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">Location</span>
+                            <span class="info-value">Maharashtra, India</span>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fa-brands fa-github"></i>
+                        </div>
+                        <div class="info-content">
+                            <span class="info-label">GitHub</span>
+                            <span class="info-value">
+                                <a href="https://github.com/deepsh3969" target="_blank">github.com/deepsh3969</a>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="status-container">
+                        <div class="status-pill">
+                            <span class="status-dot"></span>
+                            <span>Open for projects &amp; collaborations</span>
+                        </div>
+                    </div>
+
+                </aside>
+
+                <!-- Right Column: Interactive Form -->
+                <section class="contact-form-wrapper">
+                    <form action="#" method="POST">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fullName">Full Name <span class="required-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Deepesh Chaurasia" required>
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email Address <span class="required-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="example@domain.com" required>
+                                    <i class="fa-solid fa-at"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <div class="input-with-icon">
+                                    <input type="tel" id="phone" name="phone" class="form-control" placeholder="+91 8010276467">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject <span class="required-star">*</span></label>
+                                <div class="input-with-icon">
+                                    <select id="subject" name="subject" class="form-control" required>
+                                        <option value="General Inquiry" selected>General Inquiry</option>
+                                        <option value="Project Proposal">Project Proposal</option>
+                                        <option value="Collaboration">Collaboration Request</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                    <i class="fa-solid fa-tag"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Your Message <span class="required-star">*</span></label>
+                            <textarea id="message" name="message" class="form-control" placeholder="Write your message here..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-submit">
+                            <i class="fa-solid fa-paper-plane"></i> Send Message
+                        </button>
+
+                    </form>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Deepesh Chaurasia. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
